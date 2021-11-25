@@ -1,1 +1,1 @@
-# automation-challengue-wizeline
+# automation-challenge-wizeline
