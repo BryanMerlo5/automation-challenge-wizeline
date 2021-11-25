@@ -1,0 +1,31 @@
+{
+    "name": "automation-challenge-wizeline",
+    "version": "1.0.0",
+    "description": "This is a framework about automation-wizeline-challenge",
+    "main": "index.js",
+    "directories": {
+        "test": "tests"
+    },
+    "scripts": {
+        "test": "npm run tests",
+        "wdio": "wdio run wdio.conf.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BryanMerlo5/automation-challenge-wizeline.git"
+    },
+    "author": "Bryan Merlos",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/BryanMerlo5/automation-challenge-wizeline/issues"
+    },
+    "homepage": "https://github.com/BryanMerlo5/automation-challenge-wizeline#readme",
+    "devDependencies": {
+        "@wdio/cli": "^7.16.9",
+        "@wdio/local-runner": "^7.16.9",
+        "@wdio/mocha-framework": "^7.16.6",
+        "@wdio/spec-reporter": "^7.16.9",
+        "chromedriver": "^96.0.0",
+        "wdio-chromedriver-service": "^7.2.2"
+    }
+}
