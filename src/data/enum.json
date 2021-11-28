@@ -6,7 +6,13 @@
         "problem":"problem_user",
         "performance":"performance_glitch_user",
         "invalid": "stad_user"
-
     },
-    "pass": "secret_sauce"
+    "pass": "secret_sauce",
+    "sortProduct": {
+        "byNameAtoZ": "Name (A to Z)",
+        "byNameZtoA": "Name (Z to A)",
+        "byPriceLowToHigh": "Price (low to high)",
+        "byPriceHighToLow": "Price (high to low)"
+    },
+    "pricesLowToHigh": ["$7.99", "$9.99", "$15.99", "$15.99", "$29.99", "$49.99"]
 }

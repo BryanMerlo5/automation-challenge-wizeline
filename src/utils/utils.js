@@ -29,7 +29,7 @@ class Utils {
     * @param falseCase if true it waits for the opposite (default: false)
     * @param timeOut time in ms
     */
-     async isDisplayed (selector) {
+    async isDisplayed (selector) {
         // selector could be a string or a getter
         if (typeof selector === 'string' || selector instanceof String){
             return await $(selector).isDisplayed();
