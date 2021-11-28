@@ -20,5 +20,3 @@ describe('Sorting products', () => {
         expect(isSortedByLow).to.be.equal(priceLowToHigh);       
     });
 });
-
-
