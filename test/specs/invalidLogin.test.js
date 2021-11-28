@@ -12,7 +12,7 @@ describe('My Login application', () => {
         await Utils.waitForEnabled(LoginPage.imgLogo, true, timeOut);
         await LoginPage.login(data.user.invalid, data.pass);
         // Validate error message is displayed
-        const isErrorDisplayed = await Utils.isDisplayed('[data-test="error"]');
+        const isErrorDisplayed = await Utils.isDisplayed(LoginPage.lblErrorInvalidUser);
         expect(isErrorDisplayed).to.be.equal(true);
     });
 });
