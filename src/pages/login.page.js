@@ -13,6 +13,7 @@ class LoginPage {
     get lblPassword() { return $('div[class="login_password"]'); } 
     get btnLogin() { return $('#login-button'); }
     get imgLogo() { return $('div[class="login_logo"]'); }
+    get lblErrorInvalidUser() {return $('[data-test="error"]');}
 
     /**
      * a method to encapsule automation code to interact with the page
