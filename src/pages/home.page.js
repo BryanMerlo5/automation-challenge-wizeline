@@ -14,7 +14,11 @@ class HomePage {
     get lblLogout() { return $('#logout_sidebar_link'); }
     get ddlSort() { return $('[data-test="product_sort_container"]'); }
     get lblActiveOption() { return $('[class="active_option"]'); }
-    get lblLogout() { return $('#logout_sidebar_link'); }
+    get btnAddToCartBackpack() { return $('#add-to-cart-sauce-labs-backpack'); }
+    get btnAddToCartBikeLight() { return $('#add-to-cart-sauce-labs-bike-light'); }
+    get btnAddToCartOnesie() { return $('#add-to-cart-sauce-labs-onesie'); }
+    get lblShopingCartBadge() { return $('.shopping_cart_badge'); }
+    get btnCartShopping() { return $('.shopping_cart_link'); }
 
     /**
      * a method to Logout through hamburguer menu
@@ -26,6 +30,10 @@ class HomePage {
         await this.lblLogout.click();
     }
 
+    /**
+     * a method to select an option given the drop down list element
+     * e.g. to select A from select type of item
+     */
     async selectOptionToSortProduct (option) {
         const selectBox = await this.ddlSort;
         await selectBox.selectByVisibleText(option);
