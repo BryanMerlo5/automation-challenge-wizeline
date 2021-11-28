@@ -7,7 +7,6 @@ const expect = require('chai').expect;
 describe('My Login application', () => {
     it('Should be displayed an error message with invalid credentials', async () => {
         let timeOut = 10000;
-        let products = 'PRODUCTS';
         await LoginPage.open();
         await Utils.waitForEnabled(LoginPage.imgLogo, true, timeOut);
         await LoginPage.login(data.user.invalid, data.pass);
