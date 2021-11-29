@@ -17,6 +17,6 @@ describe('Sorting products', () => {
         await HomePage.selectOptionToSortProduct(data.sortProduct.byPriceLowToHigh);
         // Validate the products have been sorted by price correctly
         const isSortedByLow = await HomePage.lblActiveOption.getText();
-        expect(isSortedByLow).to.be.equal(priceLowToHigh);       
+        expect(isSortedByLow).to.be.equal(priceLowToHigh);
     });
 });
