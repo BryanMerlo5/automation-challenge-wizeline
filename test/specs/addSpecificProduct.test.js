@@ -7,33 +7,26 @@ const expect = require('chai').expect;
 const assert = require('assert');
 
 describe('Purchasing Products', () => {
-    it('Should add multiple items to cart', async () => {
+    it('Should add a specific item "Sauce Labs Onesie" to the cart', async () => {
         const timeOut = 10000;
-        const firstItem = 'Backpack';
-        const secondItem = 'Bike Light';
         await LoginPage.open();
         await Utils.waitForEnabled(LoginPage.imgLogo, true, timeOut);
         await LoginPage.login(data.user.standard, data.pass);
         await Utils.waitForEnabled(HomePage.lnkCart);
         await Utils.waitForEnabled(HomePage.lblProducts);
         
-        await HomePage.selectItem(firstItem);
+        // Check quantity of item added to the cart
+        await HomePage.selectItem(data.items.thirdItem);
         let quantity = await HomePage.itemsAddedToCart();
         expect(quantity).to.be.equal(1);
-
-        await HomePage.selectItem(secondItem);
-        quantity = await HomePage.itemsAddedToCart();
-        expect(quantity).to.be.equal(2);
 
         await HomePage.goToCartPage();
 
         const isCartPage = await CartPage.getTitlePage();
-        expect(isCartPage).to.be.equal('YOUR CART');
+        expect(isCartPage).to.be.equal(data.title.cartPage);
         
-        // Validate all the items that have been added to the shopping cart page
-        let isFirstItemDisplayed = await CartPage.checkItemAdded('Backpack');
+        // Validate the correct product was added to the cart.
+        let isFirstItemDisplayed = await CartPage.checkItemAdded(data.items.thirdItem);
         expect(isFirstItemDisplayed).to.be.equal(true);
-        let isSecondItemDisplayed = await CartPage.checkItemAdded('Bike Light');
-        expect(isSecondItemDisplayed).to.be.equal(true);
     });
 });
