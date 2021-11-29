@@ -4,7 +4,6 @@ const CartPage = require('../../src/pages/cart.page');
 const data = require('../../src/data/enum.json');
 const Utils = require('../../src/utils/utils');
 const expect = require('chai').expect;
-const assert = require('assert');
 
 describe('Purchasing Products', () => {
     it('Should add multiple items to cart', async () => {

@@ -1,5 +1,4 @@
 const LoginPage = require('../../src/pages/login.page');
-const HomePage = require('../../src/pages/home.page');
 const data = require('../../src/data/enum.json');
 const Utils = require('../../src/utils/utils');
 const expect = require('chai').expect;
