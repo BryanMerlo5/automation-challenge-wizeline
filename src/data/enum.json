@@ -14,5 +14,13 @@
         "byPriceLowToHigh": "Price (low to high)",
         "byPriceHighToLow": "Price (high to low)"
     },
-    "pricesLowToHigh": ["$7.99", "$9.99", "$15.99", "$15.99", "$29.99", "$49.99"]
+    "pricesLowToHigh": ["$7.99", "$9.99", "$15.99", "$15.99", "$29.99", "$49.99"],
+    "items": {
+        "firstItem": "Backpack",
+        "secondItem": "Bike Light",
+        "thirdItem": "Onesie"
+    },
+    "title": {
+        "cartPage": "YOUR CART"
+    }
 }
