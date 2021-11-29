@@ -5,7 +5,10 @@
         "locked":"locked_out_user",
         "problem":"problem_user",
         "performance":"performance_glitch_user",
-        "invalid": "stad_user"
+        "invalid": "stad_user",
+        "firstName": "Enrique",
+        "lastName": "Segoviano",
+        "postalCode": "64100"
     },
     "pass": "secret_sauce",
     "sortProduct": {
@@ -21,6 +24,9 @@
         "thirdItem": "Onesie"
     },
     "title": {
-        "cartPage": "YOUR CART"
+        "cartPage": "YOUR CART",
+        "checkoutPage": "CHECKOUT: YOUR INFORMATION",
+        "overviewPage": "CHECKOUT: OVERVIEW",
+        "orderPage": "CHECKOUT: COMPLETE!"
     }
 }
