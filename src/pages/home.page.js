@@ -19,12 +19,15 @@ class HomePage {
     get btnAddToCartOnesie() { return $('#add-to-cart-sauce-labs-onesie'); }
     get lblShopingCartBadge() { return $('.shopping_cart_badge'); }
     get btnCartShopping() { return $('.shopping_cart_link'); }
+    get btnRemoveToCartBackpack() { return $('#remove-sauce-labs-backpack'); }
+    get btnRemoveToCartBikeLight() { return $('#remove-sauce-labs-bike-light'); }
+    get btnRemoveToCartOnesie() { return $('#remove-sauce-labs-onesie'); }
 
     /**
      * a method to Logout through hamburguer menu
      * e.g. to logout from hamburguer menu
      */
-     async logout () {
+    async logout () {
         await this.btnMenu.click();
         await this.mnuOptions.waitForDisplayed();
         await this.lblLogout.click();
@@ -37,6 +40,46 @@ class HomePage {
     async selectOptionToSortProduct (option) {
         const selectBox = await this.ddlSort;
         await selectBox.selectByVisibleText(option);
+    }
+
+    /**
+     * a method to select an item given its name
+     * e.g. to select Backpackage item to the cart
+     */
+    async selectItem (name) {
+        switch(name) {
+            case 'Backpack': 
+                await this.btnAddToCartBackpack.click();
+                await this.btnRemoveToCartBackpack.waitForDisplayed();
+                break;
+            case 'Bike Light':
+                await this.btnAddToCartBikeLight.click();
+                await this.btnRemoveToCartBikeLight.waitForDisplayed();
+                break;
+            case 'Onesie':
+                await this.btnAddToCartOnesie.click();
+                await this.btnRemoveToCartOnesie.waitForDisplayed();
+                break;
+        }
+    }
+
+    /**
+     * a method to check the number of items added to the cart
+     * e.g. returns the number of items added to the cart
+     */
+    async itemsAddedToCart () {
+        const items = await this.lblShopingCartBadge.getText();
+        return Number(items);
+    }
+
+    /**
+     * a method to go cart page
+     */
+    async goToCartPage() {
+        const isDisplayed = await this.btnCartShopping.isDisplayed();
+        if(isDisplayed) {
+            await this.btnCartShopping.click();
+        }
     }
 }
 
