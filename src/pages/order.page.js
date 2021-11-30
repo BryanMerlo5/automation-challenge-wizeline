@@ -24,6 +24,18 @@ class OrderPage {
     /**
      * is to get Header is displayed
      */
+     async waitToOrderPage() {
+        let i, title;
+        do {
+            i = i + 1;
+            await browser.pause(1000);
+            title = await this.lblTitle.getValue();
+        } while(title === 'CHECKOUT: COMPLETE!' && i < 100);
+    }
+
+    /**
+     * is to get Header is displayed
+     */
      async isBackHomeDisplayed() {
         return await utils.isDisplayed(this.btnBackHome);
     }

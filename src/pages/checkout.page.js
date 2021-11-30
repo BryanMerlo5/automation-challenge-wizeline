@@ -17,21 +17,32 @@ class CheckoutPage {
     get lblTitle() { return $('.title');}
 
     /**
+     * waits to CheckoutPage is visible
+     */
+    async waitToCheckoutPage () {
+        let i, title;
+        do {
+            i = i + 1;
+            await browser.pause(1000);
+            title = await this.lblTitle.getValue();
+        } while(title === 'CHECKOUT: YOUR INFORMATION' && i < 100);
+    }
+
+    /**
      * a method to get the title of the cart page
      * e.g. returns the title
      */
-    async getTitlePage () {
-        const title = await this.lblTitle.getText();
+     async getTitlePage () {
+        const title = await this.lblTitle.getValue();
         return title;
     }
-
+    
     /**
      * a method to set a value in name textbox
      * e.g. Alex as name
      */
     async setFirstName (name) {
-        await utils.waitForEnabled(this.txtFirstName, true, 5000);
-        await this.txtFirstName.setText(name);
+        await this.txtFirstName.setValue(name);
     }
 
     /**
@@ -39,8 +50,7 @@ class CheckoutPage {
      * e.g. Rodriguez as name
      */
     async setLastName (lastName) {
-        await utils.waitForEnabled(this.txtLastName, true, 5000);
-        await this.txtLastName.setText(lastName);
+        await this.txtLastName.setValue(lastName);
     }
 
     /**
@@ -48,8 +58,7 @@ class CheckoutPage {
      * e.g. 64100 as postal code
      */
     async setPostalCode (code) {
-        await utils.waitForEnabled(this.txtZipCode, true, 5000);
-        await this.txtZipCode.setText(code);
+        await this.txtZipCode.setValue(code);
     }
 }
 
