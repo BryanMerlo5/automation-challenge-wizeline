@@ -6,6 +6,10 @@ This is a automation challenge for Wizeline
 - Install NodeJS
 - Execute ```npm install command```
 
+## Run the tests
+- npx wdio run ./wdio.conf.js
+- npx wdio run ./wdio.conf.js --spec example.e2e.js
+
 ## Technologies
 - NodeJS 16.3.0
 - Visual Studio Code
