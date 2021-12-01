@@ -5,6 +5,7 @@ This is a automation challenge for Wizeline
 - ```git clone https://github.com/BryanMerlo5/automation-challenge-wizeline.git```
 - Install NodeJS
 - Execute ```npm install``` command
+- Install Chrome browser ```96.0``` or higher
 
 ## Run the tests
 - Run all scripts ```npx wdio run ./wdio.conf.js```
